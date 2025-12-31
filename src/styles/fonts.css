@@ -1,0 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700&family=Nunito:wght@400;600;700&display=swap');
+
+:root {
+  --font-sans: 'Nunito', 'M PLUS Rounded 1c', 'Helvetica Neue', Helvetica, sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', 'Menlo', 'Courier New', monospace;
+}

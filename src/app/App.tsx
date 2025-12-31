@@ -1,0 +1,29 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HomePage } from './components/HomePage';
+import { ProfilePage } from './components/ProfilePage';
+import { ProductsPage } from './components/ProductsPage';
+import { BlogPage } from './components/BlogPage';
+import { AboutPage } from './components/AboutPage';
+import { ProjectsPage } from './components/ProjectsPage';
+import { Header } from './components/Header';
+import { getMainClassName } from './components/layoutUtils.js';
+
+export default function App() {
+  return (
+    <Router>
+      <div className="site-shell">
+        <Header />
+        <main className={getMainClassName()}>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/profile" element={<ProfilePage />} />
+            <Route path="/products" element={<ProductsPage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/blog" element={<BlogPage />} />
+            <Route path="/projects" element={<ProjectsPage />} />
+          </Routes>
+        </main>
+      </div>
+    </Router>
+  );
+}
