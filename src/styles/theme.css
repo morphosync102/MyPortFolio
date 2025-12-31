@@ -266,6 +266,7 @@
   }
 }
 
+
 .reveal-up {
   animation: rise-in 0.8s ease both;
 }
@@ -325,6 +326,7 @@
 .glow-pulse {
   animation: cozy-pulse 6s ease-in-out infinite;
 }
+
 
 @media (prefers-reduced-motion: reduce) {
   .reveal-up,

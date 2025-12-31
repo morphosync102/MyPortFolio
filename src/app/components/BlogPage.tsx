@@ -7,9 +7,9 @@ export function BlogPage() {
     <div className="mx-auto max-w-6xl px-6 py-20">
       <div className="reveal-up flex flex-col gap-4">
         <span className="text-xs uppercase tracking-[0.4em] text-amber-600">Blog</span>
-        <h1 className="text-4xl font-semibold text-amber-950">Field notes</h1>
+        <h1 className="text-4xl font-semibold text-amber-950">作成した記事</h1>
         <p className="max-w-2xl text-base text-amber-800">
-          Short reads on experiments, production notes, and the practice behind the work.
+          これまでに作成した記事をまとめています。
         </p>
       </div>
 

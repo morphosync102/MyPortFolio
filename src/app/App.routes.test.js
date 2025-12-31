@@ -5,7 +5,7 @@ import fs from 'node:fs';
 const appPath = new URL('./App.tsx', import.meta.url);
 const appSource = fs.readFileSync(appPath, 'utf8');
 
-const requiredRoutes = ['/about', '/blog', '/projects'];
+const requiredRoutes = ['/profile', '/blog', '/projects'];
 
 test('App routes include required primary pages', () => {
   requiredRoutes.forEach((route) => {

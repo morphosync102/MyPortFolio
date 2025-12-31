@@ -12,6 +12,11 @@ test('HomePage keeps primary layout within main content and readable layout', ()
 });
 
 test('HomePage hero provides visual separation for focus blocks', () => {
-  assert.ok(pageSource.includes('border border-amber-300/80'), 'uses visual separators');
-  assert.ok(pageSource.includes('bg-amber-200/90'), 'uses subtle contrast surfaces');
+  assert.ok(pageSource.includes('border border-amber-200/80'), 'uses visual separators');
+  assert.ok(pageSource.includes('bg-amber-50/90'), 'uses subtle contrast surfaces');
+});
+
+test('HomePage displays last updated label from config', () => {
+  assert.ok(pageSource.includes('contentConfig.lastUpdated'), 'uses last updated config');
+  assert.ok(pageSource.includes('Updated'), 'renders updated label');
 });

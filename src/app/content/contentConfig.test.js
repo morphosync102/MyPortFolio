@@ -28,7 +28,7 @@ test('social links include GitHub and LinkedIn with new tab behavior', () => {
 
 test('nav items include site name and primary pages', () => {
   assert.ok(Array.isArray(contentConfig.navItems), 'navItems should be an array');
-  const requiredIds = ['home', 'about', 'blog', 'projects'];
+  const requiredIds = ['home', 'profile', 'blog', 'projects'];
   const navIds = contentConfig.navItems.map((item) => item.id);
 
   requiredIds.forEach((id) => {
@@ -41,22 +41,28 @@ test('nav items include site name and primary pages', () => {
   assert.equal(homeItem?.kind, 'internal');
 });
 
-test('about items include at least one entry', () => {
-  assert.ok(Array.isArray(contentConfig.aboutItems), 'aboutItems should be an array');
-  assert.ok(contentConfig.aboutItems.length > 0, 'aboutItems should exist');
-  contentConfig.aboutItems.forEach((item) => {
-    assert.ok(item.id, 'about item id should be defined');
-    assert.ok(item.title, 'about item title should be defined');
-    assert.ok(item.body, 'about item body should be defined');
+test('content config includes last updated label', () => {
+  assert.ok(contentConfig.lastUpdated, 'lastUpdated should be defined');
+});
+
+test('roles items include required fields', () => {
+  assert.ok(Array.isArray(contentConfig.rolesItems), 'rolesItems should be an array');
+  assert.ok(contentConfig.rolesItems.length > 0, 'rolesItems should exist');
+  contentConfig.rolesItems.forEach((item) => {
+    assert.ok(item.id, 'roles item id should be defined');
+    assert.ok(item.company, 'roles item company should be defined');
+    assert.ok(item.title, 'roles item title should be defined');
+    assert.ok(item.summary, 'roles item summary should be defined');
   });
 });
 
-test('tech stack items include at least one entry', () => {
-  assert.ok(Array.isArray(contentConfig.techStackItems), 'techStackItems should be an array');
-  assert.ok(contentConfig.techStackItems.length > 0, 'techStackItems should exist');
-  contentConfig.techStackItems.forEach((item) => {
-    assert.ok(item.id, 'tech stack item id should be defined');
-    assert.ok(item.name, 'tech stack item name should be defined');
+test('skills items include at least one entry', () => {
+  assert.ok(Array.isArray(contentConfig.skillsItems), 'skillsItems should be an array');
+  assert.ok(contentConfig.skillsItems.length > 0, 'skillsItems should exist');
+  contentConfig.skillsItems.forEach((item) => {
+    assert.ok(item.id, 'skills item id should be defined');
+    assert.ok(item.name, 'skills item name should be defined');
+    assert.ok(item.description, 'skills item description should be defined');
   });
 });
 
@@ -77,5 +83,15 @@ test('project items include at least one entry', () => {
     assert.ok(item.id, 'project item id should be defined');
     assert.ok(item.name, 'project item name should be defined');
     assert.ok(item.summary, 'project item summary should be defined');
+  });
+});
+
+test('hobbies items include at least one entry', () => {
+  assert.ok(Array.isArray(contentConfig.hobbiesItems), 'hobbiesItems should be an array');
+  assert.ok(contentConfig.hobbiesItems.length > 0, 'hobbiesItems should exist');
+  contentConfig.hobbiesItems.forEach((item) => {
+    assert.ok(item.id, 'hobbies item id should be defined');
+    assert.ok(item.name, 'hobbies item name should be defined');
+    assert.ok(item.description, 'hobbies item description should be defined');
   });
 });

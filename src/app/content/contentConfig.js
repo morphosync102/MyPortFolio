@@ -1,16 +1,17 @@
 export const contentConfig = {
-  siteName: 'NoraGuwa.com',
+  siteName: 'noraguwa.com',
+  lastUpdated: '2025.12.31',
   navItems: [
     {
       id: 'home',
-      label: 'Portfolio',
+      label: 'noraguwa.com',
       href: '/',
       kind: 'internal',
     },
     {
-      id: 'about',
-      label: 'About',
-      href: '/about',
+      id: 'profile',
+      label: 'Profile',
+      href: '/profile',
       kind: 'internal',
     },
     {
@@ -42,36 +43,59 @@ export const contentConfig = {
       openInNewTab: true,
     },
   ],
-  aboutItems: [
+  rolesItems: [
     {
-      id: 'philosophy',
-      title: 'Human-centered craft',
-      body: 'Designing interfaces that feel calm, clear, and intentional.',
-    },
-    {
-      id: 'iteration',
-      title: 'Iterate with curiosity',
-      body: 'Small experiments and steady refinement over time.',
+      id: 'HPE',
+      company: '日本ヒューレット・パッカード合同会社 (2024年4月 〜 )',
+      title: 'システムエンジニア',
+      summary: 'セキュリティ専門のシステムエンジニアとして、セキュリティソリューションの導入案件にPLとして参画。運用案件の担当経験もあり。',
     },
   ],
-  techStackItems: [
-    { id: 'react', name: 'React', category: 'Frontend' },
-    { id: 'typescript', name: 'TypeScript', category: 'Frontend' },
-    { id: 'three', name: 'Three.js', category: '3D' },
+  skillsItems: [
+    { id: 'security', name: 'Security', description: 'Splunk, Deep Security, LogStorageなど案件参画経験あり' },
+    { id: 'AI', name: 'Generative AI', description: '生成AI活用によるコンテンツ制作' },
+    { id: 'Python', name: 'Python', description: '基本的なプログラミングは可能' },
+  ],
+  hobbiesItems: [
+    {
+      id: 'coffee',
+      name: 'コーヒー',
+      description: '学生時代にコーヒーサークルに加入',
+    },
+    {
+      id: 'game',
+      name: 'ゲーム',
+      description: 'どうぶつの森とインディーゲームが好き',
+    },
+    {
+      id: 'darts',
+      name: 'ダーツ',
+      description: '家にダーツ盤を置いて練習中',
+    },
+    {
+      id: 'genAI',
+      name: 'バイブコーディング',
+      description: '棋士の藤井聡太さんと同じ',
+    },
+    {
+      id: 'books',
+      name: '読書',
+      description: 'ビジネス本を読むのが趣味になりつつある',
+    },
   ],
   blogItems: [
     {
       id: 'r3f-notes',
-      title: 'Building calm 3D interfaces',
-      summary: 'Notes on balancing performance and mood in WebGL scenes.',
-      href: 'https://example.com/blog/calm-3d',
+      title: '年末帰省するエンジニアよ、VPNで自宅のRaspberry Piに遠隔で接続しよう！',
+      summary: 'VPNサーバーを構築して、遠隔で自宅のRaspberry Piに接続する方法を紹介',
+      href: 'https://qiita.com/molphosync102/items/2018711bbd42d9a764cc',
     },
   ],
   projectItems: [
     {
       id: 'portfolio',
-      name: 'Interactive portfolio',
-      summary: 'A 3D-driven landing with focused storytelling.',
+      name: 'ポートフォリオサイト公開',
+      summary: 'システムエンジニアとしての経歴、スキル、趣味をまとめたポートフォリオサイトを公開',
       href: 'https://example.com/projects/portfolio',
     },
   ],

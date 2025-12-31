@@ -17,23 +17,22 @@ export function HomePage() {
       <div className="relative z-10 mx-auto flex min-h-screen max-w-6xl flex-col justify-center px-6 py-24">
         <div className="flex flex-col items-start gap-12">
           <div className="max-w-2xl">
-            <div className="reveal-up inline-flex items-center gap-3 rounded-full border border-amber-200/80 bg-amber-50/90 px-4 py-2 text-[11px] uppercase tracking-[0.3em] text-amber-700 backdrop-blur-sm">
+            <div className="reveal-up inline-flex flex-wrap items-center gap-3 rounded-full border border-amber-200/80 bg-amber-50/90 px-4 py-2 text-[11px] uppercase tracking-[0.3em] text-amber-700 backdrop-blur-sm">
               <span className="h-2 w-2 rounded-full bg-amber-400" />
-              Cozy Cabin Signal
+              Updated {contentConfig.lastUpdated}
             </div>
             <h1 className="reveal-up delay-1 mt-6 text-4xl font-semibold leading-tight text-amber-950 sm:text-6xl">
-              Warm, gentle stories shaped by winter light.
+              Hi, I'm Yudai Ishigaki
             </h1>
             <p className="reveal-up delay-2 mt-6 text-base text-amber-800 sm:text-lg">
-              A friendly portfolio and blog inspired by a snowy cabin. Soft colors,
-              rounded edges, and the glow of a quiet fireplace guide the experience.
+              システムエンジニア 石垣雄大のポートフォリオサイトです。日々の開発記録や趣味の活動を発信しています。
             </p>
             <div className="reveal-up delay-3 mt-8 flex flex-wrap items-center gap-3">
               <Link
-                to="/about"
-                className="rounded-full border border-amber-300/80 bg-amber-200/90 px-5 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-amber-950 transition hover:bg-amber-200"
+                to="/profile"
+                className="rounded-full border border-amber-200/80 bg-amber-50/90 px-5 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-amber-800 transition hover:bg-amber-100/80 hover:text-amber-950"
               >
-                About
+                Profile
               </Link>
               <Link
                 to="/blog"

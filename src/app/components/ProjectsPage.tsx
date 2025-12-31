@@ -7,9 +7,9 @@ export function ProjectsPage() {
     <div className="mx-auto max-w-6xl px-6 py-20">
       <div className="reveal-up flex flex-col gap-4">
         <span className="text-xs uppercase tracking-[0.4em] text-amber-600">Projects</span>
-        <h1 className="text-4xl font-semibold text-amber-950">Selected work</h1>
+        <h1 className="text-4xl font-semibold text-amber-950">制作したプロダクト</h1>
         <p className="max-w-2xl text-base text-amber-800">
-          Highlighted pieces that blend storytelling, interactivity, and precise execution.
+          これまでに作成した制作物をまとめています。
         </p>
       </div>
 
