@@ -38,8 +38,11 @@ jobs:
           mkdir -p ~/.ssh/
           echo "${{ secrets.PI_SSH_KEY }}" > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/id_ed25519
+
+      - name: Add SSH key to known hosts
+        run:
           ssh-keyscan -H ${{ secrets.PI_HOST }} >> ~/.ssh/known_hosts
       
       - name: Send to server
-        run: |
+        run:
           scp -r -i ~/.ssh/id_ed25519 dist/* ${{ secrets.PI_USER }}@${{ secrets.PI_HOST }}:/var/www/html
