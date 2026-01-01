@@ -30,7 +30,7 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y wireguard-tools
-          printf "[Interface]\nPrivateKey = ${{ secrets.WG_PRIVATE_KEY }}\nAddress = ${{ secrets.WG_ADDRESS }}\n\n[Peer]\nPublicKey = ${{ secrets.WG_PUBLIC_KEY }}\nEndpoint = ${{ secrets.WG_ENDPOINT }}\nAllowedIPs = ${{ secrets.WG_ALLOWED_IPS }}\nPersistentKeepalive = 25" | sudo tee /etc/wireguard/wg0.conf > /dev/null
+          printf "[Interface]\nPrivateKey = ${{ secrets.WG_PRIVATE_KEY }}\nAddress = ${{ secrets.WG_ADDRESS }}\nMTU = 1280\n\n[Peer]\nPublicKey = ${{ secrets.WG_PUBLIC_KEY }}\nEndpoint = ${{ secrets.WG_ENDPOINT }}\nAllowedIPs = ${{ secrets.WG_ALLOWED_IPS }}\nPersistentKeepalive = 25" | sudo tee /etc/wireguard/wg0.conf > /dev/null
           sudo wg-quick up wg0
           
           # Verify VPN connection
