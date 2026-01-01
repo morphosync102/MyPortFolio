@@ -34,7 +34,7 @@ jobs:
           sudo wg-quick up wg0
 
       - name: Deploy to server
-        run: 
+        run: |
           mkdir -p ~/.ssh/
           echo "${{ secrets.PI_SSH_KEY }}" > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/id_ed25519
