@@ -1,0 +1,42 @@
+name: Deploy React
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Update Last Updated Date
+        run: |
+          CURRENT_DATE=$(date +'%Y.%m.%d')
+          sed -i "s/lastUpdated: '.*'/lastUpdated: '$CURRENT_DATE'/" src/app/content/contentConfig.js
+          grep "lastUpdated" src/app/content/contentConfig.js
+
+      - name: Install dependencies
+        run: |
+          npm ci
+          npm run build
+
+      - name: Install and Setup WireGuard
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y wireguard-tools
+          printf "[Interface]\nPrivateKey = ${{ secrets.WG_PRIVATE_KEY }}\nAddress = ${{ secrets.WG_ADDRESS }}\nDNS = 8.8.8.8\n\n[Peer]\nPublicKey = ${{ secrets.WG_PUBLIC_KEY }}\nEndpoint = ${{ secrets.WG_ENDPOINT }}\nAllowedIPs = ${{ secrets.WG_ALLOWED_IPS }}\nPersistentKeepalive = 25" | sudo tee /etc/wireguard/wg0.conf > /dev/null
+          sudo wg-quick up wg0
+
+      - name: Deploy to server
+        run: |
+          mkdir -p ~/.ssh/
+          echo "${{ secrets.PI_SSH_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H ${{ secrets.PI_HOST }} >> ~/.ssh/known_hosts
+          scp -r -i ~/.ssh/id_rsa dist/* ${{ secrets.PI_USER }}@${{ secrets.PI_HOST }}:/var/www/html

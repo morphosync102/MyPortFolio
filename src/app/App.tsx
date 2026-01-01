@@ -3,6 +3,7 @@ import { HomePage } from './components/HomePage';
 import { BlogPage } from './components/BlogPage';
 import { AboutPage } from './components/AboutPage';
 import { ProjectsPage } from './components/ProjectsPage';
+import { NotFoundPage } from './components/NotFoundPage';
 import { Header } from './components/Header';
 import { getMainClassName } from './components/layoutUtils.js';
 
@@ -17,6 +18,7 @@ export default function App() {
             <Route path="/profile" element={<AboutPage />} />
             <Route path="/blog" element={<BlogPage />} />
             <Route path="/projects" element={<ProjectsPage />} />
+            <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </main>
       </div>

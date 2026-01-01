@@ -13,3 +13,8 @@ test('App routes include required primary pages', () => {
     assert.ok(pattern.test(appSource), `expected route ${route}`);
   });
 });
+
+test('App routes include fallback route', () => {
+  const pattern = new RegExp('<Route\\s+path=\\"\\*\\"', 'g');
+  assert.ok(pattern.test(appSource), 'expected fallback route');
+});

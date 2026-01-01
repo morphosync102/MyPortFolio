@@ -54,7 +54,7 @@ export const contentConfig = {
   skillsItems: [
     { id: 'security', name: 'Security', description: 'Splunk, Deep Security, LogStorageなど案件参画経験あり' },
     { id: 'AI', name: 'Generative AI', description: '生成AI活用によるコンテンツ制作' },
-    { id: 'Python', name: 'Python', description: '基本的なプログラミングは可能' },
+    { id: 'Python', name: 'Python', description: 'PythonでAtCoder茶' },
   ],
   hobbiesItems: [
     {
