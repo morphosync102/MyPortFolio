@@ -34,9 +34,12 @@ jobs:
           sudo wg-quick up wg0
 
       - name: Deploy to server
-        run: |
+        run: 
           mkdir -p ~/.ssh/
-          echo "${{ secrets.PI_SSH_KEY }}" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
+          echo "${{ secrets.PI_SSH_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
           ssh-keyscan -H ${{ secrets.PI_HOST }} >> ~/.ssh/known_hosts
-          scp -r -i ~/.ssh/id_rsa dist/* ${{ secrets.PI_USER }}@${{ secrets.PI_HOST }}:/var/www/html
+      
+      - name: Send to server
+        run: |
+          scp -r -i ~/.ssh/id_ed25519 dist/* ${{ secrets.PI_USER }}@${{ secrets.PI_HOST }}:/var/www/html
