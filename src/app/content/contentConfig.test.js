@@ -95,3 +95,20 @@ test('hobbies items include at least one entry', () => {
     assert.ok(item.description, 'hobbies item description should be defined');
   });
 });
+
+
+test('certifications items include required fields', () => {
+  assert.ok(
+    Array.isArray(contentConfig.certificationsItems),
+    'certificationsItems should be an array'
+  );
+  assert.ok(
+    contentConfig.certificationsItems.length > 0,
+    'certificationsItems should exist'
+  );
+  contentConfig.certificationsItems.forEach((item) => {
+    assert.ok(item.id, 'certifications item id should be defined');
+    assert.ok(item.name, 'certifications item name should be defined');
+    assert.ok(item.description, 'certifications item description should be defined');
+  });
+});

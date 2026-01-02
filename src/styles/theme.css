@@ -40,6 +40,7 @@
   --sidebar-border: rgba(154, 101, 68, 0.22);
   --sidebar-ring: rgba(200, 134, 90, 0.35);
 }
+
 .dark {
   --background: #3a2a22;
   --foreground: #fff3e3;
@@ -126,13 +127,60 @@
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-sans);
+    position: relative;
+    transition: background-color 0.5s ease, color 0.5s ease;
+  }
+
+  /* Light Mode Background Image Layer */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: -50;
     background-image:
       linear-gradient(180deg, rgba(255, 246, 237, 0.35) 0%, rgba(255, 241, 226, 0.45) 45%, rgba(255, 234, 210, 0.55) 100%),
       url('/background.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-attachment: fixed;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+  }
+
+  /* Dark Mode Background Image Layer */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: -50;
+    background-image:
+      linear-gradient(180deg, rgba(45, 32, 26, 0.6) 0%, rgba(62, 44, 36, 0.55) 45%, rgba(74, 52, 42, 0.5) 100%),
+      url('/background.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+  }
+
+  .dark body::before {
+    opacity: 0;
+  }
+
+  .dark body::after {
+    opacity: 1;
+  }
+
+  /* Smooth transition for common interactive elements */
+  /* Global transition for ALL elements that might change color in dark mode */
+  *,
+  *::before,
+  *::after {
+    transition-property: background-color, border-color, color, fill, stroke, box-shadow;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 0.5s;
   }
 
   /**
@@ -215,11 +263,22 @@
   z-index: 0;
 }
 
+.dark .site-shell::before {
+  background: radial-gradient(circle at 20% 20%, rgba(92, 64, 52, 0.4), transparent 55%);
+}
+
+.dark .site-shell::after {
+  background:
+    radial-gradient(circle at 80% 10%, rgba(120, 80, 64, 0.35), transparent 60%),
+    linear-gradient(180deg, rgba(60, 42, 34, 0.2), rgba(42, 30, 24, 0.35));
+}
+
 @keyframes rise-in {
   from {
     opacity: 0;
     transform: translate3d(0, 20px, 0);
   }
+
   to {
     opacity: 1;
     transform: translate3d(0, 0, 0);
@@ -231,36 +290,22 @@
     opacity: 0;
     transform: translate3d(0, -14px, 0);
   }
+
   to {
     opacity: 1;
     transform: translate3d(0, 0, 0);
   }
 }
 
-@keyframes slow-float {
-  0%, 100% {
-    transform: translate3d(0, 0, 0);
-  }
-  50% {
-    transform: translate3d(0, -8px, 0);
-  }
-}
 
-@keyframes ember-glow {
-  0%, 100% {
-    opacity: 0.5;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.9;
-    transform: scale(1.1);
-  }
-}
 
 @keyframes cozy-pulse {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 0.45;
   }
+
   50% {
     opacity: 0.8;
   }
@@ -295,33 +340,7 @@
   animation-delay: 0.4s;
 }
 
-.stagger > * {
-  animation: rise-in 0.7s ease both;
-}
 
-.stagger > *:nth-child(2) {
-  animation-delay: 0.12s;
-}
-
-.stagger > *:nth-child(3) {
-  animation-delay: 0.22s;
-}
-
-.stagger > *:nth-child(4) {
-  animation-delay: 0.32s;
-}
-
-.stagger > *:nth-child(5) {
-  animation-delay: 0.42s;
-}
-
-.float-slow {
-  animation: slow-float 6s ease-in-out infinite;
-}
-
-.ember {
-  animation: ember-glow 5s ease-in-out infinite;
-}
 
 .glow-pulse {
   animation: cozy-pulse 6s ease-in-out infinite;
@@ -329,11 +348,9 @@
 
 
 @media (prefers-reduced-motion: reduce) {
+
   .reveal-up,
   .reveal-down,
-  .stagger > *,
-  .float-slow,
-  .ember,
   .glow-pulse {
     animation: none !important;
   }

@@ -17,3 +17,7 @@ test('Header renders GitHub and LinkedIn icons when configured', () => {
   assert.ok(headerSource.includes('Github'), 'includes GitHub icon');
   assert.ok(headerSource.includes('Linkedin'), 'includes LinkedIn icon');
 });
+
+test('Header includes theme toggle control', () => {
+  assert.ok(headerSource.includes('ThemeToggle'), 'renders theme toggle');
+});

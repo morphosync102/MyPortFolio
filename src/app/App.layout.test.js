@@ -9,3 +9,7 @@ test('App wraps routes with Header and main offset', () => {
   assert.ok(appSource.includes('<Header />'), 'renders Header');
   assert.ok(appSource.includes('getMainClassName()'), 'applies main offset');
 });
+
+test('App provides theme state to the layout', () => {
+  assert.ok(appSource.includes('ThemeProvider'), 'wraps app with ThemeProvider');
+});

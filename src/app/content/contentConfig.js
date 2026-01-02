@@ -56,6 +56,18 @@ export const contentConfig = {
       summary: 'セキュリティ専門のシステムエンジニアとして、セキュリティソリューションの導入案件にPLとして参画。運用案件の担当経験もあり。',
     },
   ],
+  certificationsItems: [
+    {
+      id: 'security-basic',
+      name: '情報セキュリティマネジメント',
+      description: 'セキュリティ運用の基礎を体系的に学習し、業務に活用。',
+    },
+    {
+      id: 'cloud-practitioner',
+      name: 'AWS Certified Cloud Practitioner',
+      description: 'クラウド基礎とセキュリティベストプラクティスを整理。',
+    },
+  ],
   skillsItems: [
     { id: 'security', name: 'Security', description: 'Splunk, Deep Security, LogStorageなど案件参画経験あり' },
     { id: 'AI', name: 'Generative AI', description: '生成AI活用によるコンテンツ制作' },

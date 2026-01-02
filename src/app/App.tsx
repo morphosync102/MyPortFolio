@@ -7,23 +7,26 @@ import { NotFoundPage } from './components/NotFoundPage';
 import { Header } from './components/Header';
 import { getMainClassName } from './components/layoutUtils.js';
 import { RouteViewTracker } from './analytics/routeViewTracker';
+import { ThemeProvider } from './theme/ThemeProvider';
 
 export default function App() {
   return (
-    <Router>
-      <div className="site-shell">
-        <Header />
-        <main className={getMainClassName()}>
-          <RouteViewTracker />
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/profile" element={<AboutPage />} />
-            <Route path="/blog" element={<BlogPage />} />
-            <Route path="/projects" element={<ProjectsPage />} />
-            <Route path="*" element={<NotFoundPage />} />
-          </Routes>
-        </main>
-      </div>
-    </Router>
+    <ThemeProvider>
+      <Router>
+        <div className="site-shell">
+          <Header />
+          <main className={getMainClassName()}>
+            <RouteViewTracker />
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/profile" element={<AboutPage />} />
+              <Route path="/blog" element={<BlogPage />} />
+              <Route path="/projects" element={<ProjectsPage />} />
+              <Route path="*" element={<NotFoundPage />} />
+            </Routes>
+          </main>
+        </div>
+      </Router>
+    </ThemeProvider>
   );
 }

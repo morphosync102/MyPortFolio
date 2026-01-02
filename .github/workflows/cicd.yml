@@ -24,7 +24,15 @@ jobs:
       - name: Install dependencies
         run: |
           npm ci
-          npm run build
+
+      - name: Run Lint
+        run: npm run lint
+
+      - name: Run Test
+        run: npm run test
+
+      - name: Build
+        run: npm run build
 
       - name: Install and Setup WireGuard
         run: |

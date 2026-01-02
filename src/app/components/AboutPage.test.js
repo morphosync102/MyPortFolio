@@ -11,6 +11,17 @@ test('AboutPage uses content data for roles, skills, and hobbies', () => {
   assert.ok(/hobbiesItems\.map/.test(aboutSource), 'maps hobbies items');
 });
 
+test('AboutPage connects certifications section', () => {
+  assert.ok(
+    aboutSource.includes('certificationsItems'),
+    'reads certifications items'
+  );
+  assert.ok(
+    aboutSource.includes('CertificationsSection'),
+    'renders certifications section'
+  );
+});
+
 test('AboutPage renders items as lists', () => {
   assert.ok(aboutSource.includes('about-list'), 'uses list class');
   assert.ok(aboutSource.includes('about-list-item'), 'uses list item class');
