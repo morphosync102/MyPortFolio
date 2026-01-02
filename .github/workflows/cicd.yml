@@ -36,8 +36,6 @@ jobs:
           # Verify VPN connection
           echo "Checking WireGuard status..."
           sudo wg show
-          echo "Pinging target host (${{ secrets.PI_HOST }})..."
-          ping -c 3 ${{ secrets.PI_HOST }} || echo "Ping failed, target might not be reachable yet."
 
       - name: Deploy to server
         run: |

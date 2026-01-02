@@ -24,7 +24,7 @@ export function AboutPage() {
             {rolesItems.map((item) => (
               <li
                 key={item.id}
-                className="about-list-item flex gap-3 rounded-2xl border border-amber-200/70 bg-amber-50/85 px-4 py-3 leading-relaxed shadow-[0_12px_24px_rgba(216,165,110,0.16)] backdrop-blur-sm"
+                className="about-list-item flex gap-3 rounded-2xl border border-amber-200/80 bg-amber-50/90 px-4 py-3 leading-relaxed shadow-[0_12px_24px_rgba(216,165,110,0.16)] backdrop-blur-sm"
               >
                 <CoffeeBeanIcon className="coffee-bean-icon mt-1 text-amber-600" />
                 <div>
@@ -51,7 +51,7 @@ export function AboutPage() {
             {skillsItems.map((item) => (
               <li
                 key={item.id}
-                className="about-list-item flex gap-3 rounded-2xl border border-amber-200/70 bg-amber-50/85 px-4 py-3 leading-relaxed shadow-[0_12px_24px_rgba(216,165,110,0.16)] backdrop-blur-sm"
+                className="about-list-item flex gap-3 rounded-2xl border border-amber-200/80 bg-amber-50/90 px-4 py-3 leading-relaxed shadow-[0_12px_24px_rgba(216,165,110,0.16)] backdrop-blur-sm"
               >
                 <CoffeeBeanIcon className="coffee-bean-icon mt-1 text-amber-600" />
                 <div>
@@ -77,7 +77,7 @@ export function AboutPage() {
             {hobbiesItems.map((item) => (
               <li
                 key={item.id}
-                className="about-list-item flex gap-3 rounded-2xl border border-amber-200/70 bg-amber-50/85 px-4 py-3 leading-relaxed shadow-[0_12px_24px_rgba(216,165,110,0.16)] backdrop-blur-sm"
+                className="about-list-item flex gap-3 rounded-2xl border border-amber-200/80 bg-amber-50/90 px-4 py-3 leading-relaxed shadow-[0_12px_24px_rgba(216,165,110,0.16)] backdrop-blur-sm"
               >
                 <CoffeeBeanIcon className="coffee-bean-icon mt-1 text-amber-600" />
                 <div>

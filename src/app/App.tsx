@@ -6,6 +6,7 @@ import { ProjectsPage } from './components/ProjectsPage';
 import { NotFoundPage } from './components/NotFoundPage';
 import { Header } from './components/Header';
 import { getMainClassName } from './components/layoutUtils.js';
+import { RouteViewTracker } from './analytics/routeViewTracker';
 
 export default function App() {
   return (
@@ -13,6 +14,7 @@ export default function App() {
       <div className="site-shell">
         <Header />
         <main className={getMainClassName()}>
+          <RouteViewTracker />
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/profile" element={<AboutPage />} />

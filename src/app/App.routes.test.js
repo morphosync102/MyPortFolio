@@ -18,3 +18,7 @@ test('App routes include fallback route', () => {
   const pattern = new RegExp('<Route\\s+path=\\"\\*\\"', 'g');
   assert.ok(pattern.test(appSource), 'expected fallback route');
 });
+
+test('App includes route view tracker', () => {
+  assert.ok(appSource.includes('RouteViewTracker'), 'includes route view tracker');
+});

@@ -1,6 +1,11 @@
 export const contentConfig = {
   siteName: 'noraguwa.com',
   lastUpdated: '2025.12.31',
+  analyticsConfig: {
+    measurementId: 'G-697ZRDS79V',
+    enableInDev: false,
+    engagementEvents: ['scroll_depth', 'outbound_click', 'cta_click'],
+  },
   navItems: [
     {
       id: 'home',
