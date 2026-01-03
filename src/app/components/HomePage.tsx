@@ -8,12 +8,6 @@ export function HomePage() {
 
   return (
     <div className="relative min-h-screen overflow-hidden">
-      <div className="pointer-events-none absolute inset-0">
-        <div className="glow-pulse absolute -left-10 top-6 h-40 w-40 rounded-full bg-amber-200/60 blur-3xl dark:bg-slate-700/20" />
-        <div className="glow-pulse absolute right-8 top-24 h-32 w-32 rounded-full bg-orange-200/60 blur-3xl dark:bg-slate-600/20" />
-        <div className="absolute bottom-16 left-1/2 h-56 w-56 -translate-x-1/2 rounded-full bg-amber-100/70 blur-[90px] dark:bg-slate-500/10" />
-      </div>
-
       <div className="relative z-10 mx-auto flex min-h-screen max-w-6xl flex-col justify-center px-6 py-24">
         <div className="flex flex-col items-start gap-12">
           <div className="max-w-2xl">
@@ -24,8 +18,9 @@ export function HomePage() {
             <h1 className="reveal-up delay-1 mt-6 text-4xl font-semibold leading-tight text-amber-950 sm:text-6xl dark:text-slate-100">
               Hi, I'm Yudai Ishigaki
             </h1>
-            <p className="reveal-up delay-2 mt-6 text-base text-amber-800 sm:text-lg dark:text-slate-300">
-              システムエンジニア 石垣雄大のポートフォリオサイトです。日々の開発記録や趣味の活動を発信しています。
+            <p className="reveal-up delay-2 mt-6 whitespace-pre-line text-base text-amber-800 sm:text-lg dark:text-slate-300">
+              {`システムエンジニア 石垣雄大のポートフォリオサイトです。
+              日々の開発記録を発信しています。`}
             </p>
             <div className="reveal-up delay-3 mt-8 flex flex-wrap items-center gap-3">
               <Link
@@ -67,7 +62,6 @@ export function HomePage() {
               )}
             </div>
           </div>
-
         </div>
       </div>
     </div>

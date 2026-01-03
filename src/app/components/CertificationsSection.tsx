@@ -3,7 +3,7 @@ import { CoffeeBeanIcon } from './CoffeeBeanIcon.js';
 type CertificationItem = {
   id: string;
   name: string;
-  description: string;
+  description?: string;
 };
 
 type CertificationsSectionProps = {
@@ -31,7 +31,7 @@ export function CertificationsSection({ items }: CertificationsSectionProps) {
               <span className="block text-base font-semibold text-amber-950 dark:text-slate-200">
                 {item.name}
               </span>
-              <span className="mt-1 block">{item.description}</span>
+              {item.description && <span className="mt-1 block">{item.description}</span>}
             </div>
           </li>
         ))}

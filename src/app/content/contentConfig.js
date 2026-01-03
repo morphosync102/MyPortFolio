@@ -55,17 +55,62 @@ export const contentConfig = {
       title: 'システムエンジニア',
       summary: 'セキュリティ専門のシステムエンジニアとして、セキュリティソリューションの導入案件にPLとして参画。運用案件の担当経験もあり。',
     },
+    {
+      id: 'UNIV',
+      company: '上智大学外国語学部 (2020年4月 〜 2024年3月)',
+      title: '言語学専攻',
+      summary: 'フランス語を主に学ぶ。大学3年生の時、競技プログラミングや機械学習に触れる。',
+    },
   ],
   certificationsItems: [
     {
-      id: 'security-basic',
-      name: '情報セキュリティマネジメント',
-      description: 'セキュリティ運用の基礎を体系的に学習し、業務に活用。',
+      id: 'TOEIC',
+      name: 'TOEIC L&R Score 890',
     },
     {
-      id: 'cloud-practitioner',
+      id: 'FE',
+      name: '応用情報技術者試験',
+    },
+    {
+      id: 'LPICLevel2',
+      name: 'Linux Professional Institute Certified Engineer (LPIC Level 2)',
+      description: 'LPIC101, LPIC102, LPIC201, LPIC202',
+    },
+    {
+      id: 'AWS',
       name: 'AWS Certified Cloud Practitioner',
-      description: 'クラウド基礎とセキュリティベストプラクティスを整理。',
+    },
+    {
+      id: 'AZ-900',
+      name: 'Microsoft Certified: Azure Fundamentals',
+    },
+    {
+      id: 'AZ-104',
+      name: 'Microsoft Certified: Azure Administrator Associate',
+    },
+    {
+      id: 'AI-900',
+      name: 'Microsoft Certified: Azure AI Fundamentals',
+    },
+    {
+      id: 'AI-102',
+      name: 'Microsoft Certified: Azure AI Engineer Associate',
+    },
+    {
+      id: 'DP-900',
+      name: 'Microsoft Certified: Azure Data Fundamentals',
+    },
+    {
+      id: 'DP-300',
+      name: 'Microsoft Certified: Azure Database Administrator Associate',
+    },
+    {
+      id: 'DP-100',
+      name: 'Microsoft Certified: Azure Data Scientist Associate',
+    },
+    {
+      id: 'DP-600',
+      name: 'Microsoft Certified: Fabric Analytics Engineer Associate',
     },
   ],
   skillsItems: [
@@ -82,7 +127,7 @@ export const contentConfig = {
     {
       id: 'game',
       name: 'ゲーム',
-      description: 'どうぶつの森とインディーゲームが好き',
+      description: 'どうぶつの森とインディーゲーム（最近はSlay the Spire）が好き',
     },
     {
       id: 'darts',
@@ -113,7 +158,7 @@ export const contentConfig = {
       id: 'portfolio',
       name: 'ポートフォリオサイト公開',
       summary: 'システムエンジニアとしての経歴、スキル、趣味をまとめたポートフォリオサイトを公開',
-      href: 'https://example.com/projects/portfolio',
+      href: 'https://noraguwa.com',
     },
   ],
 };
