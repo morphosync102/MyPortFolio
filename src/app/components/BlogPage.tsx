@@ -7,7 +7,7 @@ export function BlogPage() {
     <div className="mx-auto max-w-6xl px-6 py-20">
       <div className="reveal-up flex flex-col gap-4">
         <span className="text-xs uppercase tracking-[0.4em] text-amber-600 dark:text-slate-400">Blog</span>
-        <h1 className="text-4xl font-semibold text-amber-950 dark:text-slate-100">作成した記事</h1>
+        <h1 className="text-3xl font-semibold text-amber-950 dark:text-slate-100 sm:text-4xl">作成した記事</h1>
         <p className="max-w-2xl text-base text-amber-800 dark:text-slate-300">
           これまでに作成した記事をまとめています。
         </p>

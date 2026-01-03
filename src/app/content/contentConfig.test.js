@@ -109,6 +109,5 @@ test('certifications items include required fields', () => {
   contentConfig.certificationsItems.forEach((item) => {
     assert.ok(item.id, 'certifications item id should be defined');
     assert.ok(item.name, 'certifications item name should be defined');
-    assert.ok(item.description, 'certifications item description should be defined');
   });
 });

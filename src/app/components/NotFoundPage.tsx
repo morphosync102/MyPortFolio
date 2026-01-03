@@ -4,7 +4,7 @@ export function NotFoundPage() {
   return (
     <div className="mx-auto flex max-w-3xl flex-col items-start px-6 py-20">
       <span className="text-xs uppercase tracking-[0.4em] text-amber-600 dark:text-slate-400">Error</span>
-      <h1 className="mt-4 text-4xl font-semibold text-amber-950 dark:text-slate-100">404</h1>
+      <h1 className="mt-4 text-3xl font-semibold text-amber-950 dark:text-slate-100 sm:text-4xl">404</h1>
       <p className="mt-4 max-w-xl text-base text-amber-800 dark:text-slate-300">
         お探しのページは見つかりませんでした。URLをご確認のうえ、もう一度お試しください。
       </p>

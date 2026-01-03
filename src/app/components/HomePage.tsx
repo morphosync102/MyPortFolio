@@ -7,7 +7,7 @@ export function HomePage() {
   const visibleSocialLinks = getVisibleSocialLinks(contentConfig.socialLinks);
 
   return (
-    <div className="relative min-h-screen overflow-hidden">
+    <div className="relative min-h-screen overflow-x-hidden">
       <div className="relative z-10 mx-auto flex min-h-screen max-w-6xl flex-col justify-center px-6 py-24">
         <div className="flex flex-col items-start gap-12">
           <div className="max-w-2xl">
@@ -15,7 +15,7 @@ export function HomePage() {
               <span className="h-2 w-2 rounded-full bg-amber-400" />
               Updated {contentConfig.lastUpdated}
             </div>
-            <h1 className="reveal-up delay-1 mt-6 text-4xl font-semibold leading-tight text-amber-950 sm:text-6xl dark:text-slate-100">
+            <h1 className="reveal-up delay-1 mt-6 text-3xl font-semibold leading-tight text-amber-950 sm:text-6xl dark:text-slate-100">
               Hi, I'm Yudai Ishigaki
             </h1>
             <p className="reveal-up delay-2 mt-6 whitespace-pre-line text-base text-amber-800 sm:text-lg dark:text-slate-300">
