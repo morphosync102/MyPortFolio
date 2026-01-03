@@ -15,22 +15,19 @@ jobs:
         with:
           node-version: "20"
           cache: 'npm'
-          cache-dependency-path: PortFolio-Blog/package-lock.json
+          cache-dependency-path: package-lock.json
 
       - name: Install dependencies
         run: |
-          cd PortFolio-Blog
           npm ci
 
       - name: Run Lint
         run: |
-          cd PortFolio-Blog
           npm run lint
 
       - name: Run Test
         run: |
-          cd PortFolio-Blog
-          npm run test
+          npm run test:ui
 
   build:
     runs-on: ubuntu-latest
@@ -42,30 +39,27 @@ jobs:
         with:
           node-version: "20"
           cache: 'npm'
-          cache-dependency-path: PortFolio-Blog/package-lock.json
+          cache-dependency-path: package-lock.json
 
       - name: Install dependencies
         run: |
-          cd PortFolio-Blog
           npm ci
 
       - name: Update Last Updated Date
         run: |
-          cd PortFolio-Blog
           CURRENT_DATE=$(date +'%Y.%m.%d')
           sed -i "s/lastUpdated: '.*'/lastUpdated: '$CURRENT_DATE'/" src/app/content/contentConfig.js
           grep "lastUpdated" src/app/content/contentConfig.js
 
       - name: Build
         run: |
-          cd PortFolio-Blog
           npm run build
 
       - name: Upload Build Artifact
         uses: actions/upload-artifact@v4
         with:
           name: dist-files
-          path: PortFolio-Blog/dist/
+          path: dist/
 
   deploy:
     runs-on: ubuntu-latest
