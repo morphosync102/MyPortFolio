@@ -1,4 +1,4 @@
-# Personal Blog Portfolio Website (noraguwa.com)
+# ポートフォリオ兼ブログサイト
 
 ## Overview
 自身の経歴、スキルセット、資格、制作実績、および技術ブログを発信するためのポートフォリオ兼ブログサイトです。
