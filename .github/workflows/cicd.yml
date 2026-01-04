@@ -71,25 +71,27 @@ jobs:
           name: dist-files
           path: dist
 
-      - name: Install cloudflared
+      - name: Install and Setup WireGuard
         run: |
-          curl -L --output cloudflared.deb https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb
-          sudo dpkg -i cloudflared.deb
-
-      - name: Setup SSH
-        run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.PI_SSH_KEY }}" > ~/.ssh/id_ed25519
-          chmod 600 ~/.ssh/id_ed25519
+          sudo apt-get update
+          sudo apt-get install -y wireguard-tools
+          printf "[Interface]\nPrivateKey = ${{ secrets.WG_PRIVATE_KEY }}\nAddress = ${{ secrets.WG_ADDRESS }}\nMTU = 1280\n\n[Peer]\nPublicKey = ${{ secrets.WG_PUBLIC_KEY }}\nEndpoint = ${{ secrets.WG_ENDPOINT }}\nAllowedIPs = ${{ secrets.WG_ALLOWED_IPS }}\nPersistentKeepalive = 25" | sudo tee /etc/wireguard/wg0.conf > /dev/null
+          sudo wg-quick up wg0
           
-          # Configure SSH to use Cloudflare Access
-          echo "Host ${{ secrets.PI_HOST }}" > ~/.ssh/config
-          echo "  User ${{ secrets.PI_USER }}" >> ~/.ssh/config
-          echo "  IdentityFile ~/.ssh/id_ed25519" >> ~/.ssh/config
-          echo "  StrictHostKeyChecking no" >> ~/.ssh/config
-          echo "  ProxyCommand /usr/bin/cloudflared access ssh --hostname %h --id ${{ secrets.CF_CLIENT_ID }} --secret ${{ secrets.CF_CLIENT_SECRET }}" >> ~/.ssh/config
+          # Verify VPN connection
+          echo "Checking WireGuard status..."
+          sudo wg show
 
       - name: Deploy to server
         run: |
-          # The connection is handled via ~/.ssh/config ProxyCommand
-          scp -r dist/* ${{ secrets.PI_HOST }}:/var/www/html
+          mkdir -p ~/.ssh/
+          echo "${{ secrets.PI_SSH_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+
+      - name: Add SSH key to known hosts
+        run:
+          ssh-keyscan -H ${{ secrets.PI_HOST }} >> ~/.ssh/known_hosts
+      
+      - name: Send to server
+        run:
+          scp -r -i ~/.ssh/id_ed25519 dist/* ${{ secrets.PI_USER }}@${{ secrets.PI_HOST }}:/var/www/html
