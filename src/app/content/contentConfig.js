@@ -147,6 +147,12 @@ export const contentConfig = {
   ],
   blogItems: [
     {
+      id: 'cicd-notes',
+      title: '【CI/CD】Webサイトのコンテンツ更新〜自宅Webサーバーへのデプロイを自動化！【VPNあり】',
+      summary: 'GitHub Actionsを活用して、Webサイトのコンテンツ更新を自動化する方法を紹介',
+      href: 'https://qiita.com/molphosync102/items/717ef3e35bafd97cd92e',
+    },
+    {
       id: 'r3f-notes',
       title: '年末帰省するエンジニアよ、VPNで自宅のRaspberry Piに遠隔で接続しよう！',
       summary: 'VPNサーバーを構築して、遠隔で自宅のRaspberry Piに接続する方法を紹介',
