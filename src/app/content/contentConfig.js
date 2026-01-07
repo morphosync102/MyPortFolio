@@ -148,6 +148,12 @@ export const contentConfig = {
   blogItems: [
     {
       id: 'cicd-notes',
+      title: '【Cloudflare Tunnel】ポート開放なしで自宅Webサーバーをセキュアに公開しよう！',
+      summary: 'Cloudflare Tunnelを活用して、自宅Webサーバーをセキュアに公開する方法を紹介',
+      href: 'https://qiita.com/molphosync102/items/b435de2570777c9dd23b',
+    },
+    {
+      id: 'cicd-notes',
       title: '【CI/CD】Webサイトのコンテンツ更新〜自宅Webサーバーへのデプロイを自動化！【VPNあり】',
       summary: 'GitHub Actionsを活用して、Webサイトのコンテンツ更新を自動化する方法を紹介',
       href: 'https://qiita.com/molphosync102/items/717ef3e35bafd97cd92e',
