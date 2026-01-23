@@ -172,5 +172,11 @@ export const contentConfig = {
       summary: 'システムエンジニアとしての経歴、スキル、趣味をまとめたポートフォリオサイトを公開',
       href: 'https://noraguwa.com',
     },
+    {
+      id: 'kakeibo',
+      name: '個人用家計簿アプリ開発',
+      summary: 'Gmailへのカード支払い通知を読み取り、自動で家計簿を更新する個人用アプリを開発',
+      href: 'https://github.com/morphosync102/Kakeibo',
+    },
   ],
 };
