@@ -24,7 +24,7 @@ const bodyTextCases = [
   {
     name: 'About description',
     render: () => renderWithRouter(<AboutPage />),
-    matcher: /上智大学外国語学部卒業。2024年よりシステムエンジニアとして就職。/u,
+    matcher: /上智大学外国語学部卒業。2024年よりセキュリティ領域のシステムエンジニアとして働き、現在3年目。/u,
   },
   {
     name: 'Projects description',

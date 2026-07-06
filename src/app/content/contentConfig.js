@@ -52,8 +52,8 @@ export const contentConfig = {
     {
       id: 'HPE',
       company: '日本ヒューレット・パッカード合同会社 (2024年4月 〜 )',
-      title: 'システムエンジニア',
-      summary: 'セキュリティ専門のシステムエンジニアとして、セキュリティソリューションの導入案件にPLとして参画。運用案件の担当経験もあり。',
+      title: 'システムエンジニア (PL / PM)',
+      summary: 'セキュリティ領域のSEとして現在3年目。2年目からPLとして導入案件を複数完遂し、3年目にはメールセキュリティ導入案件で提案から検収までPMを担当。現在はDLP導入案件のPLを務める。',
     },
     {
       id: 'UNIV',
@@ -68,8 +68,12 @@ export const contentConfig = {
       name: 'TOEIC L&R Score 890',
     },
     {
-      id: 'FE',
+      id: 'AP',
       name: '応用情報技術者試験',
+    },
+    {
+      id: 'ITIL4',
+      name: 'ITIL 4 Foundation',
     },
     {
       id: 'LPICLevel2',
@@ -114,8 +118,12 @@ export const contentConfig = {
     },
   ],
   skillsItems: [
-    { id: 'security', name: 'Security', description: 'Splunk, Deep Security, LogStorageなど案件参画経験あり' },
-    { id: 'AI', name: 'Generative AI', description: '生成AI活用によるコンテンツ制作' },
+    { id: 'security', name: 'Security / M365', description: 'Microsoft Defender, Exchange Online, Purview, Trend Micro Deep Security, Logstorage などの導入・運用案件に参画' },
+    { id: 'cloud', name: 'Azure', description: 'Azure VM移行案件を経験。Azure Administrator Associate 保有' },
+    { id: 'splunk', name: 'Splunk', description: 'Splunk UF / Add-on の移行、ログ収集基盤の更改を担当' },
+    { id: 'linux', name: 'Linux (RHEL)', description: 'RHEL 8.6→9.5 の移行案件を経験。LPIC Level 2 保有' },
+    { id: 'pm', name: 'PM / PL', description: '顧客折衝・リスク管理を含むプロジェクト推進。提案から検収まで一気通貫で経験' },
+    { id: 'AI', name: 'Generative AI', description: 'ChatGPT / Claude / GitHub Copilot を業務に活用。ログ確認作業を約80%削減(30分→5分)した実績あり' },
     { id: 'Python', name: 'Python', description: 'PythonでAtCoder茶' },
   ],
   hobbiesItems: [
@@ -143,6 +151,16 @@ export const contentConfig = {
       id: 'books',
       name: '読書',
       description: 'ビジネス本を読むのが趣味になりつつある',
+    },
+    {
+      id: '3dprinter',
+      name: '3Dプリンター',
+      description: 'Bambu Lab A1 Miniで小物を印刷して遊んでいる',
+    },
+    {
+      id: 'investing',
+      name: '投資',
+      description: 'NISAでインデックス投資をコツコツ',
     },
   ],
   blogItems: [
@@ -177,6 +195,11 @@ export const contentConfig = {
       name: 'ポートフォリオサイト公開',
       summary: 'システムエンジニアとしての経歴、スキル、趣味をまとめたポートフォリオサイトを公開',
       href: 'https://noraguwa.com',
+    },
+    {
+      id: 'interphone-line',
+      name: 'インターホンLINE通知システム',
+      summary: '自宅インターホンの呼び出しをLINEに通知する自宅向けシステムを開発',
     },
   ],
 };

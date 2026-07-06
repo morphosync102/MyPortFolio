@@ -11,8 +11,8 @@ export function AboutPage() {
         <span className="text-xs uppercase tracking-[0.4em] text-amber-600 dark:text-slate-400">Profile</span>
         <h1 className="text-3xl font-semibold text-amber-950 dark:text-slate-100 sm:text-4xl">石垣雄大 / Yudai Ishigaki</h1>
         <p className="max-w-2xl text-base text-amber-800 whitespace-pre-line dark:text-slate-300">
-          {`上智大学外国語学部卒業。2024年よりシステムエンジニアとして就職。
-            セキュリティ関連業務のかたわら、生成AIをこねくり回している。`}
+          {`上智大学外国語学部卒業。2024年よりセキュリティ領域のシステムエンジニアとして働き、現在3年目。
+            PL/PMとして導入案件を推進するかたわら、生成AIをこねくり回している。`}
         </p>
       </div>
 
